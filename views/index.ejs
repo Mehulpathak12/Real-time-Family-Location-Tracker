@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>famTrack – Stay Connected, Stay Safe</title>
+    <link rel="stylesheet" href="/style/output.css">
+</head>
+<body class="bg-zinc-900 w-full">
+    <div class="text-white">
+        <nav class="w-full h-15 rounded-2xl flex items-center justify-between p-6">
+            <h1 class="text-white text-5xl font-bold text-center">FamTrack</h1>
+            <% if (!loginState){ %>
+                <a href="/register" ><button class="bg-blue-500 rounded-2xl size-10 w-30">Register</button></a>
+            <%}else{%>
+                <a href="/home" ><button class="bg-blue-500 rounded-2xl size-10 w-30">Dashboard</button></a>
+            <%}%>
+            <!-- <button class="bg-blue-500 rounded-2xl size-10 w-30"><%= loginState ? 'Dashboard' : 'Register' %></button> -->
+        </nav>
+        <section class="flex flex-col items-center justify-center text-center py-20 px-4 md:px-8 lg:px-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">
+              Stay Connected. Stay Safe.
+            </h2>
+            <p class="max-w-2xl text-lg mb-8 text-gray-600 dark:text-gray-300">
+              famTrack helps you keep your loved ones close. Share your live location,
+              connect family members, and be there in times of emergency.
+            </p>
+            <div class="flex gap-4 flex-wrap justify-center">
+                <% if (!loginState){ %>
+                    <a href="/register" ><button class="bg-primary text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition">Get Started</button></a>
+                <%}else{%>
+                    <a href="/home" ><button class="bg-primary text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition">Dashboard</button></a>
+                <%}%>
+              <button class="border border-primary text-primary px-6 py-3 rounded-md hover:bg-primary hover:text-white transition">
+                Learn More
+              </button>
+            </div>
+          </section>
+          <section class="bg-gray-100 dark:bg-gray-800 py-16 px-6 md:px-20">
+            <div class="grid gap-10 md:grid-cols-3 text-center">
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Live Location Sharing</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                  Know where your family is in real-time with privacy-focused tracking.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Emergency Contact</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                  Quickly reach out to your emergency list with one tap.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Family Grouping</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                  Add and manage family members with a secure, intuitive dashboard.
+                </p>
+              </div>
+            </div>
+          </section>
+          <footer class="py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+            © 2025 famTrack. All rights reserved.
+          </footer>
+    </div>
+</body>
+</html>

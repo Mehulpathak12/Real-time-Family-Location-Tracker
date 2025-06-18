@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/output.css">
+    <title>Login Page</title>
+</head>
+<body class="bg-zinc-900 text-white">
+    <div>
+        <h3>Login Account</h3>
+        <% if (error) { %>
+            <h4 id="errorMessage" class="text-center mb-4 text-red-600">
+              <%= errorMessage || 'Something went wrong, Please try again!' %>
+            </h4>
+          <% } else { %>
+            <h4 id="errorMessage" class="text-center mb-4 text-red-600 hidden"></h4>
+          <% } %>
+        <form action="/login" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            Email:<input type="email" name="email"><br>
+            Password:<input type="password" name="password" id=""><br>
+            <input type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
